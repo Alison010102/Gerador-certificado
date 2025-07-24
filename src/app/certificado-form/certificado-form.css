@@ -1,0 +1,60 @@
+.custom-card{
+    max-width: 672px;
+    gap: 32px;
+    border-radius: 8px;
+    border: 1px solid #F7EDE2;
+    padding: 32px;
+}
+.card-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: #00B4D8;
+    margin-bottom: 20px;
+}
+.atividade-group{
+    margin-bottom: 32px;
+}
+label{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: #F28482 ;
+}
+.item-list{
+    width: 100%;
+    border: 1px solid #F7EDE2;
+    border-radius: 8px;
+    padding: 16px;
+    gap: 12px;
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-list hr{
+    all: unset;
+    display: block;
+    height: 1px; 
+    background-color: #BDE0FE;
+    margin: 12px 0;
+}
+.remove-btn i {
+    padding: 5.75px;
+    color: #F28482;
+    font-size: 12.5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.remove-btn i:hover{
+        background-color: #F7EDE2;
+}
+.custom-input{
+    border: 1px solid #BDE0FE;
+    border-radius: 6px;
+    padding: 8px 12px;
+    height: 40px;
+}
