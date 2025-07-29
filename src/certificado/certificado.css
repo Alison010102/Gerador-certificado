@@ -1,0 +1,30 @@
+.menu-certificado{
+    max-width: 800px;
+}
+.btn-voltar{
+    gap: 6px;
+}
+.btn-voltar p{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: #77B6EA ;
+}
+.btn-voltar i{
+    font-weight: 600;
+    font-size: 20px;
+    color: #77B6EA ;
+}
+.certificado{
+    margin: 32px;
+    background-image: url("../../src/app/certificate/certificate-bg.jpg");
+    width: 800;
+    height: 550px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+
+}
