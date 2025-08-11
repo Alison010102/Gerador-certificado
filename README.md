@@ -60,5 +60,5 @@ For more information on using the Angular CLI, including detailed command refere
 
 ##o que fiz
 
-Realizado a criação da página de certificados
+iniciando a parte 2 depois de uma semana de ferias 
 
