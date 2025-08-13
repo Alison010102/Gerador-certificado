@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fjalla+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap');
+
 .menu-certificado{
     max-width: 800px;
 }
@@ -54,7 +56,7 @@
     font-weight: 900;
     font-size: 24px;
     line-height: 160%;
-    letter-spacing: 10%;
+    letter-spacing: 2.4px;
     color: #1A2856;
 }
 .titulo-subtitulo-certificado p{
@@ -67,6 +69,8 @@
     color: #1A2856;
 }
 .nome-aluno{
+    /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+    font-family:'Dancing Script';
     font-weight: 700;
     font-size: 52px;
     line-height: 80px;

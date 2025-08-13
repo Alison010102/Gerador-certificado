@@ -78,6 +78,9 @@ label{
     vertical-align: middle;
     color: #EF233C;
 }
+.custom-input-group{
+    margin-bottom: 20px !important;
+}
 .custom-input-group:has(.error-message) > label{
     color: #EF233C;
 }

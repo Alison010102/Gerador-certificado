@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center">
+<form #form="ngForm" novalidate class="d-flex flex-column align-items-center">
     <div class="content-titles">
         <h1 class="fw-bold custom-title">Gerador de Certificados</h1>
         <p class=" mb-4 custom-subtitle">Preencha os Dados Para Criar um Novo Certificado</p>
@@ -7,51 +7,47 @@
         <h2 class="card-title">Novo Certificado</h2>
         <div class="mb-3 custom-input-group">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control custom-input" placeholder="Nome do aluno" id="nome">
-            <div class="error-message d-flex align-items-center">
+            <input  [(ngModel)]="nome" name="nome" #nomeRef="ngModel" maxlength="150" required="" id="nome" type="text" class="form-control custom-input" placeholder="Nome do aluno" id="nome">
+           @if (nomeRef.invalid && nomeRef.touched && nomeRef.errors?.['required']) {
+                <div class="error-message d-flex align-items-center">
                 <i class="ph ph-warning-circle"></i>
-                <p class="m-0">Error message</p>
+                <p class="m-0">Nome do aluno é obrigatório</p>
             </div>
+            }
+            @if (nomeRef.errors?.['maxlength']) {
+                <div class="error-message d-flex align-items-center">
+                <i class="ph ph-warning-circle"></i>
+                <p class="m-0">Nome do aluno deve ter no máximo 150 caracteres</p>
+            </div>
+            }
         </div>
         <div class="mb-3 d-flex align-items-end custom-input-group">
            <div class="flex-grow-1 me-2">
              <label for="atividade" class="form-label">Atividade</label>
-            <input type="text" class="form-control custom-input" placeholder="Atividade exercida" id="atividade">
+            <input #atividadeRef="ngModel" required="" [(ngModel)]="atividade" name="atividade" maxlength="50" required type="text" class="form-control custom-input" placeholder="Atividade exercida" id="atividade">
+                
            </div>
-           <app-secundarybutton></app-secundarybutton>
+           <app-secundarybutton [disabled]="atividade.length == 0" textobotao="Adicionar" phClass="ph ph-plus"
+            ></app-secundarybutton>
     </div>
     <div class="atividade-group">
         <label class="form-label">Lista de Atividades</label>
         <div class="item-list w-100">
-            <div class="item">
-                <span class="item-text">configuração com angular</span>
+           @for (atividade of atividades; track $index) {
+             <div class="item">
+                <span class="item-text">{{atividade}}</span>
                 <div class="remove-btn">
                     <i class="ph-bold ph-x"></i>
                 </div>
             </div>
-            <hr>
-            <div class="item">
-                <span class="item-text">configuração com angular</span>
-                <div class="remove-btn">
-                    <i class="ph-bold ph-x"></i>
-                </div>
-            </div>
-            <hr>
-            <div class="item">
-                <span class="item-text">configuração com angular</span>
-                <div class="remove-btn">
-                    <i class="ph-bold ph-x"></i>
-                </div>
-            </div>
-            <hr>
-            <div class="item">
-                <span class="item-text">configuração com angular</span>
-                <div class="remove-btn">
-                    <i class="ph-bold ph-x"></i>
-                </div>
-            </div>
+            @if ($index + 1 != atividades.length) {
+                 <hr>
+            }
+           }
+            
         </div>
-        <app-primarybutton></app-primarybutton>
+        <app-primarybutton [disabled]="!formValido()" [textoBotao]="'Gerar Certificado'"></app-primarybutton>
     </div>
 
 </div>
+</form>
