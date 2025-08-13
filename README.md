@@ -62,3 +62,6 @@ For more information on using the Angular CLI, including detailed command refere
 
 iniciando a parte 2 depois de uma semana de ferias 
 
+Finalizando os inputs dos botoes
+
+
