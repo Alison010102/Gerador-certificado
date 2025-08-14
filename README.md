@@ -64,4 +64,5 @@ iniciando a parte 2 depois de uma semana de ferias
 
 Finalizando os inputs dos botoes
 
+Criando a remoção e adicionamento de atividades e iniciando o interface, backend
 
