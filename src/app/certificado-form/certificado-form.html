@@ -7,7 +7,7 @@
         <h2 class="card-title">Novo Certificado</h2>
         <div class="mb-3 custom-input-group">
             <label for="nome" class="form-label">Nome</label>
-            <input  [(ngModel)]="nome" name="nome" #nomeRef="ngModel" maxlength="150" required="" id="nome" type="text" class="form-control custom-input" placeholder="Nome do aluno" id="nome">
+            <input  [(ngModel)]="certificado.nome" name="nome" #nomeRef="ngModel" maxlength="150" required="" id="nome" type="text" class="form-control custom-input" placeholder="Nome do aluno" id="nome">
            @if (nomeRef.invalid && nomeRef.touched && nomeRef.errors?.['required']) {
                 <div class="error-message d-flex align-items-center">
                 <i class="ph ph-warning-circle"></i>
@@ -27,26 +27,26 @@
             <input #atividadeRef="ngModel" required="" [(ngModel)]="atividade" name="atividade" maxlength="50" required type="text" class="form-control custom-input" placeholder="Atividade exercida" id="atividade">
                 
            </div>
-           <app-secundarybutton [disabled]="atividade.length == 0" textobotao="Adicionar" phClass="ph ph-plus"
+           <app-secundarybutton (click)="adicionarAtividade()" [disabled]="atividade.length == 0" textobotao="Adicionar" phClass="ph ph-plus"
             ></app-secundarybutton>
     </div>
     <div class="atividade-group">
         <label class="form-label">Lista de Atividades</label>
         <div class="item-list w-100">
-           @for (atividade of atividades; track $index) {
+           @for (atividade of certificado.atividades; track $index) {
              <div class="item">
                 <span class="item-text">{{atividade}}</span>
-                <div class="remove-btn">
+                <div (click)="excluirAtividade($index)" class="remove-btn">
                     <i class="ph-bold ph-x"></i>
                 </div>
             </div>
-            @if ($index + 1 != atividades.length) {
+            @if ($index + 1 != certificado.atividades.length) {
                  <hr>
             }
            }
             
         </div>
-        <app-primarybutton [disabled]="!formValido()" [textoBotao]="'Gerar Certificado'"></app-primarybutton>
+        <app-primarybutton (click)="submit()" [disabled]="!formValido()" [textoBotao]="'Gerar Certificado'"></app-primarybutton>
     </div>
 
 </div>
