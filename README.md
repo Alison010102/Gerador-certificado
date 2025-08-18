@@ -66,3 +66,5 @@ Finalizando os inputs dos botoes
 
 Criando a remoção e adicionamento de atividades e iniciando o interface, backend
 
+finalizando hoje o trabalho e postando no github
+
