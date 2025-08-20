@@ -2,7 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Secundarybutton } from "../secundarybutton/secondarybutton";
 import { ItemCertificado } from "../item-certificado/item-certificado";
-// biome-ignore lint/style/useImportType: <explanation>
 import { ActivatedRoute, RouterLink } from '@angular/router';
 // biome-ignore lint/style/useImportType: <explanation>
 import { CertificadoService } from '../_services/certificado';
@@ -11,22 +10,18 @@ import { Certificado } from '../interfaces/certificado';
 
 @Component({
   selector: 'app-pages',
-  imports: [ItemCertificado],
+  imports: [ItemCertificado, Secundarybutton],
   templateUrl: './pages.html',
   styleUrl: './pages.css'
 })
-export class Pages implements OnInit{
-  id:string | null = null
-  certificado: Certificado | undefined
-constructor(private certificadoService : CertificadoService, private route: ActivatedRoute){
+export class pages implements OnInit{
+  certificados : Certificado[] = [];
 
+constructor(private certificadoService: CertificadoService){
 }
 ngOnInit(): void {
-this.route.paramMap.subscribe(param=>{
-  this.id = param.get('id');
-  this.certificado = this.certificadoService.certificados.find(item => item.id ===this.id)
-console.log(this.certificado)
+    this.certificados= this.certificadoService.certificados;
+    console.log(this.certificados)
+}
+}
 
-})
-}
-}
